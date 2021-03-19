@@ -31,7 +31,6 @@ video.addEventListener('canplay', (e) => {
         video.setAttribute('height', height)
         canvas.setAttribute('width', width)
         canvas.setAttribute('height', height)
-
     }
 }, false)
 
