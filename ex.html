@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/5.7.14/css/framework7.bundle.min.css" integrity="sha512-k9nxaV33rqebodf/Qs27GXEPL0YExuFEurVjYBftuSi9gk8NG2umHUJLCMBS+/QDsi8gjEX7U0vV/sxky0cAnw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/5.7.14/css/framework7.min.css" integrity="sha512-3pW1FMp9Af2AW6qKYB7Uqebz+4H0H/XBWaBEHaXBtywycPCZ703p53+/zvyYVbPdSIohTAgkCjDsgLpFOyaHWA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framework7/5.7.14/js/framework7.min.js" integrity="sha512-yBFTxbeLPDjqexCnONCj6E3E4+GlQruhYMv+F51GqwB3UgqMgbjQqngUSLFtN27ds/KgMa5brUTlxVf4Bythkg==" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container" style="background: black;">
+        <div class="accordion-list">
+            <div class="accordion-item">
+              <div class="accordion-item-toggle">...</div>
+              <div class="accordion-item-content">...</div>
+            </div>
+            <div class="accordion-item accordion-item-opened">
+              <div class="accordion-item-toggle">...</div>
+              <div class="accordion-item-content">...</div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-item-toggle">...</div>
+              <div class="accordion-item-content">...</div>
+            </div>
+            ...
+          </div>
+    </div>
+    
+    <script>
+        var app = new Framework7();
+
+        var $ = Dom7;
+
+        $('.accordion-item').on('accordion:opened', function () {
+        app.dialog.alert('Accordion item opened');
+        });
+
+        $('.accordion-item').on('accordion:closed', function (e) {
+        app.dialog.alert('Accordion item closed');
+        });
+
+        app.on('accordionOpened', function (el) {
+        console.log('The following element opened:');
+        console.log(el);
+        });
+    </script>
+</body>
+</html>
